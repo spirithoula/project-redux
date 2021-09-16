@@ -1,61 +1,69 @@
 import React, { Fragment, useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
+import "../style/login";
 
-const { Component } = React
 
-class EntryPage extends Component {
+class Login extends Component {
   constructor(props){
     super(props)
     this.state = {
-      currentView: "signUp"
-    }
+      islogged: false,
+      loginParams: {
+        userName: "",
+        userPassword: ""
+      }
+    };
   }
 
-  changeView = (view) => {
+  handleFormChange = event => {
+    let loginParamsNew = { ...this.state.loginParams };
+    let val = event.target.value;
+    loginParamsNew[event.target.name] = val;
     this.setState({
-      currentView: view
-    })
-  }
-
-  currentView = () => {
-    switch(this.state.currentView) {
-      case "logIn":
-        return (
-          <form>
-            <h2>Welcome Back!</h2>
-            <fieldset>
-              <legend>Log In</legend>
-              <ul>
-                <li>
-                  <label for="username">Username:</label>
-                  <input type="text" id="username" required/>
-                </li>
-                <li>
-                  <label for="password">Password:</label>
-                  <input type="password" id="password" required/>
-                </li>
-                <li>
-                  <i/>
-                  <a onClick={ () => this.changeView("PWReset")} href="#">Forgot Password?</a>
-                </li>
-              </ul>
-            </fieldset>
-            <button>Login</button>
-            <button type="button" onClick={ () => this.changeView("signUp")}>Create an Account</button>
-          </form>
-        )
+      loginParams: loginParamsNew
+    });
+  };
+ 
+  login = event => {
+    let username = this.state.loginParams.user_id;
+    let userpassword = this.state.loginParams.user_password;
+    if (username === "username" && userpassword === "12345") {
+      localStorage.setItem("token", "T");
+      this.setState({
+        islogged: true
+      });
     }
-  }
-
-
+    event.preventDefault();
+  };
   render() {
+    if (localStorage.getItem("token")) {
+      return <Redirect to="/" />;
+    }
     return (
-      <section id="entry-page">
-        {this.currentView()}
-      </section>
-    )
+      <div className="container">
+        <form onSubmit={this.login} className="form-signin">
+          <h1 className="h3 mb-3 font-weight-normal">Login</h1>
+          <div className="row">
+            <div className="col">
+              <input
+                type="text"
+                name="user_id"
+                onChange={this.handleFormChange}
+                placeholder="Username"
+              />
+              <input
+                type="password"
+                name="user_password"
+                onChange={this.handleFormChange}
+                placeholder="Password"
+              />
+              <input type="submit" value="Login" />
+            </div>
+          </div>
+          <p>username === "username" && userpassword === "12345"</p>
+        </form>
+      </div>
+    );
   }
 }
-
-ReactDOM.render(<EntryPage/>, document.getElementById("app"))
+export default Login;
