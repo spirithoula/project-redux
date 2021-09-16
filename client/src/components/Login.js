@@ -2,65 +2,60 @@ import React, { Fragment, useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+const { Component } = React
 
-
-const Login = ({ login, isAuthenticated }) => {
-  const [formData, setFormData] = useState({
-    email: '',
-    password: ''
-  });
-
-  const { email, password } = formData;
-
-  const onChange = e =>
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-
-  const onSubmit = e => {
-    e.preventDefault();
-    login(email, password);
-  };
-
-  if (isAuthenticated) {
-    return <Redirect to="/dashboard" />;
+class EntryPage extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      currentView: "signUp"
+    }
   }
 
-  return (
-    <Fragment>
-      <h1 className="large text-primary">Login</h1>
-      <form className="form" onSubmit={onSubmit}>
-        <div className="form-group">
-          <input
-            type="email"
-            placeholder="Email Address"
-            name="email"
-            value={email}
-            onChange={onChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="password"
-            placeholder="Password"
-            name="password"
-            value={password}
-            onChange={onChange}
-            minLength="6"
-          />
-        </div>
-        <input type="submit" className="btn btn-primary" value="Login" />
-      </form>
-    </Fragment>
-  );
-};
+  changeView = (view) => {
+    this.setState({
+      currentView: view
+    })
+  }
 
-Login.propTypes = {
-  login: PropTypes.func.isRequired,
-  isAuthenticated: PropTypes.bool
-};
+  currentView = () => {
+    switch(this.state.currentView) {
+      case "logIn":
+        return (
+          <form>
+            <h2>Welcome Back!</h2>
+            <fieldset>
+              <legend>Log In</legend>
+              <ul>
+                <li>
+                  <label for="username">Username:</label>
+                  <input type="text" id="username" required/>
+                </li>
+                <li>
+                  <label for="password">Password:</label>
+                  <input type="password" id="password" required/>
+                </li>
+                <li>
+                  <i/>
+                  <a onClick={ () => this.changeView("PWReset")} href="#">Forgot Password?</a>
+                </li>
+              </ul>
+            </fieldset>
+            <button>Login</button>
+            <button type="button" onClick={ () => this.changeView("signUp")}>Create an Account</button>
+          </form>
+        )
+    }
+  }
 
-const mapStateToProps = state => ({
-  isAuthenticated: state.auth.isAuthenticated
-});
 
-export default connect(mapStateToProps, { login })(Login);
+  render() {
+    return (
+      <section id="entry-page">
+        {this.currentView()}
+      </section>
+    )
+  }
+}
+
+ReactDOM.render(<EntryPage/>, document.getElementById("app"))
