@@ -4,6 +4,10 @@
 
 This is front end only project built using React. It is meant to simulate the system used to grade projects in coding bootcamp.
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a885e43ec8d63e487fc042a7dedf12131bed4b13
     This project replicates how our projects are assigned and graded during
     this class. Each assigned project includes: Title, Requirements, Due Date,
     and categorized grading requirements with variable weights. Projects are
