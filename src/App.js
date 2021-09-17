@@ -8,52 +8,33 @@ import {
 
 
 function App() {
-  const [gradeState] = useState(grades)
 
-  const [user, setUser] = useState("");
-
-  const [password, setPassword] = useState("");
-
-  const [username, setUsername] = useState("");
-
-  const [loggedIn, setLoggedIn] = useState(false);
-
-  const changeUser = (event) => {
+  const user = (event) => {
     event.preventDefault();
-    if (username && password) {
-      setUser(username);
-      setLoggedIn(!loggedIn);
-    } else if (username && !password) {
-      window.alert('Enter Password Here')
-    } else if (!username && password) {
-      window.alert('Enter Username Here')
-    } 
-  };
-
-  const handleUsernameChange = e => {
-    setUsername(e.target.value)
-  };
-
-  const handlePasswordChange = e => {
-    setPassword(e.target.value)
   };
   
   const logInToggle = () => {
     setLoggedIn(!loggedIn);
   };
   
+
+  const [user] = useState("");
+
+  const [setPassword] = useState("");
+
+  const [setUsername] = useState("");
+
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  const [gradeState] = useState(grades)
+
+
   return (
     <Router>
-      <Login login={loggedIn} loginToggle={logInToggle} user={user} />
+      <Login login={loggedIn} loginToggle={logInToggle} user={user} setPassword={setPassword} setUsername={setUsername}/>
       <Switch>
         <Route exact path="/gradebook">
           {loggedIn ? <Gradebook login={loggedIn} projects={gradeState}/> : <Redirect to="/" />}
-        </Route>
-        <Route exact path="/project/:project">
-          {loggedIn ? <Project login={loggedIn} projects={gradeState}/> : <Redirect to="/" />}
-        </Route>
-        <Route exact path="/">
-          <Home handleChange={handleUsernameChange} handlePasswordChange={handlePasswordChange} login={loggedIn} setUser={changeUser} user={user}/>
         </Route>
       </Switch>
     </Router>
