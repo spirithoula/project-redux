@@ -1,4 +1,5 @@
 import './App.css';
+import { v4 as uuidv4 } from 'uuid';
 import Login from '../src/pages/login';
 import Gradebook from '../src/pages/gradebook';
 import {
@@ -28,7 +29,7 @@ function App() {
 
   return (
     <Router>
-      <Login login={loggedIn} loginToggle={logInToggle} user={user} setPassword={setPassword} setUsername={setUsername}/>
+      <Login Login={loggedIn} loginToggle={logInToggle} user={user} setPassword={setPassword} setUsername={setUsername}/>
       <Switch>
         <Route exact path="/gradebook">
           {loggedIn ? <Gradebook login={loggedIn} projects={gradeState}/> : <Redirect to="/" />}
