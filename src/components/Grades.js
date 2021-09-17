@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import letterConverter from "../data/fakeassign";
+import "style/gradebook";
 
 export default function Grade(props) {
 const assignment = props.assignment;

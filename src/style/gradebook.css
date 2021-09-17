@@ -1,0 +1,11 @@
+.header {
+    color:aquamarine;
+    font-size: 25px;
+}
+
+.gradebook {
+    display:block;
+    justify-content: center;
+    font-size: 15px;
+    background-color: bisque;
+}
