@@ -8,7 +8,7 @@ import {
 
 
 function App() {
-  const [gradeState, setGradeState] = useState(grades)
+  const [gradeState] = useState(grades)
 
   const [user, setUser] = useState("");
 

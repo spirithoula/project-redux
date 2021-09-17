@@ -1,44 +1,6 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
 
-
-
-class Login extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      islogged: false,
-      loginParams: {
-        userName: "",
-        userPassword: ""
-      }
-    };
-  }
-
-  handleFormChange = event => {
-    let loginParamsNew = { ...this.state.loginParams };
-    let val = event.target.value;
-    loginParamsNew[event.target.name] = val;
-    this.setState({
-      loginParams: loginParamsNew
-    });
-  };
- 
-  login = event => {
-    let username = this.state.loginParams.user_id;
-    let userpassword = this.state.loginParams.user_password;
-    if (username === "username" && userpassword === "12345") {
-      localStorage.setItem("token", "T");
-      this.setState({
-        islogged: true
-      });
-    }
-    event.preventDefault();
-  };
-  render() {
-    if (localStorage.getItem("token")) {
-      return <Redirect to="/" />;
-    }
+  render() ;{
     return (
       <div className="container">
         <form onSubmit={this.login} className="form-signin">
@@ -64,5 +26,4 @@ class Login extends Component {
       </div>
     );
   }
-}
 export default Login;

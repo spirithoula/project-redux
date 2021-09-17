@@ -6,7 +6,7 @@ This is front end only project built using React. It is meant to simulate the sy
 
 # Link to Application
 
-
+https://spirithoula.github.io/project-redux/
 
 # Tech Used
 
