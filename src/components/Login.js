@@ -1,6 +1,6 @@
 import React, { Component, Fragment, useState } from 'react';
-import { Link, Redirect } from 'react-router-dom';
-import 'style/Login';
+import { Redirect } from 'react-router-dom';
+import "../style/Login";
 
 
 class Login extends Component {
