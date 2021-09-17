@@ -1,6 +1,6 @@
 import './App.css';
-import Login from "./pages/login";
-import Gradebook from 'pages/gradebook';
+import Login from '../src/pages/login';
+import Gradebook from '../src/pages/gradebook';
 import {
   BrowseRouter as Router,
   Switch,
@@ -8,16 +8,13 @@ import {
 
 
 function App() {
-
   const user = (event) => {
     event.preventDefault();
   };
-  
   const logInToggle = () => {
     setLoggedIn(!loggedIn);
   };
   
-
   const [user] = useState("");
 
   const [setPassword] = useState("");
