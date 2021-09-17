@@ -47,20 +47,19 @@ class Login extends Component {
             <div className="col">
               <input
                 type="text"
-                name="user_id"
+                name="username"
                 onChange={this.handleFormChange}
                 placeholder="Username"
               />
               <input
                 type="password"
-                name="user_password"
+                name="userpassword"
                 onChange={this.handleFormChange}
                 placeholder="Password"
               />
               <input type="submit" value="Login" />
             </div>
           </div>
-          <p>username === "username" && userpassword === "12345"</p>
         </form>
       </div>
     );
