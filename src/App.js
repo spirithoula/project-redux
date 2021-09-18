@@ -1,11 +1,11 @@
 import './App.css';
-import { v4 as uuidv4 } from 'uuid';
 import Login from '../src/pages/login';
 import Gradebook from '../src/pages/gradebook';
 import {
-  BrowseRouter as Router,
+  BrowserRouter as Router,
   Switch,
-  Route} from "react-router-dom";
+  Route
+} from "react-router-dom";
 
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
     setLoggedIn(!loggedIn);
   };
   
-  const [user] = useState("");
+ 
 
   const [setPassword] = useState("");
 
