@@ -1,12 +1,15 @@
 import React from "react";
 import Login from "components/Login";
 
-export default fuction; Login(props) ;{
-    return (
+export default function () {
+    return(
      <div>
         <h1>Log in Here</h1>
         <Login 
-        handleChange={props.handleChange}
-        handlePasswordChange={props.handlePasswordChange}
+        handleChange={handleChange}
+        handlePasswordChange={handlePasswordChange}
         ></Login>
-    </div>);}
+        </div>
+    );
+}
+    

@@ -1,5 +1,6 @@
 import React from "react";
 import Grades from "../components/Grades";
+import "../style/gradebook.css";
 
 export default function Gradebook(props) {
     return (

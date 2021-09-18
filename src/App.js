@@ -4,7 +4,8 @@ import Gradebook from '../src/pages/gradebook';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom";
 
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-  render() ;{
+export default function Login(props) {
     return (
       <div className="container">
         <form onSubmit={this.login} className="form-signin">
@@ -25,5 +25,4 @@ import React from 'react';
         </form>
       </div>
     );
-  }
-export default Login;
+    }
