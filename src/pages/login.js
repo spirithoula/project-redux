@@ -6,8 +6,7 @@ export default function () {
      <div>
         <h1>Log in Here</h1>
         <Login 
-        handleChange={handleChange}
-        handlePasswordChange={handlePasswordChange}
+       
         ></Login>
         </div>
     );
