@@ -1,23 +1,22 @@
 {
   "files": {
-    "main.css": "//spirithoula.github.io/project-redux/static/css/main.a617e044.chunk.css",
-    "main.js": "//spirithoula.github.io/project-redux/static/js/main.494daec5.chunk.js",
-    "main.js.map": "//spirithoula.github.io/project-redux/static/js/main.494daec5.chunk.js.map",
+    "main.css": "//spirithoula.github.io/project-redux/static/css/main.266b6be8.chunk.css",
+    "main.js": "//spirithoula.github.io/project-redux/static/js/main.cb22bb22.chunk.js",
+    "main.js.map": "//spirithoula.github.io/project-redux/static/js/main.cb22bb22.chunk.js.map",
     "runtime-main.js": "//spirithoula.github.io/project-redux/static/js/runtime-main.e60e57f8.js",
     "runtime-main.js.map": "//spirithoula.github.io/project-redux/static/js/runtime-main.e60e57f8.js.map",
-    "static/js/2.e5c8a39d.chunk.js": "//spirithoula.github.io/project-redux/static/js/2.e5c8a39d.chunk.js",
-    "static/js/2.e5c8a39d.chunk.js.map": "//spirithoula.github.io/project-redux/static/js/2.e5c8a39d.chunk.js.map",
+    "static/js/2.c858d048.chunk.js": "//spirithoula.github.io/project-redux/static/js/2.c858d048.chunk.js",
+    "static/js/2.c858d048.chunk.js.map": "//spirithoula.github.io/project-redux/static/js/2.c858d048.chunk.js.map",
     "static/js/3.2aa6db87.chunk.js": "//spirithoula.github.io/project-redux/static/js/3.2aa6db87.chunk.js",
     "static/js/3.2aa6db87.chunk.js.map": "//spirithoula.github.io/project-redux/static/js/3.2aa6db87.chunk.js.map",
     "index.html": "//spirithoula.github.io/project-redux/index.html",
-    "static/css/main.a617e044.chunk.css.map": "//spirithoula.github.io/project-redux/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.e5c8a39d.chunk.js.LICENSE.txt": "//spirithoula.github.io/project-redux/static/js/2.e5c8a39d.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "//spirithoula.github.io/project-redux/static/media/logo.6ce24c58.svg"
+    "static/css/main.266b6be8.chunk.css.map": "//spirithoula.github.io/project-redux/static/css/main.266b6be8.chunk.css.map",
+    "static/js/2.c858d048.chunk.js.LICENSE.txt": "//spirithoula.github.io/project-redux/static/js/2.c858d048.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.e60e57f8.js",
-    "static/js/2.e5c8a39d.chunk.js",
-    "static/css/main.a617e044.chunk.css",
-    "static/js/main.494daec5.chunk.js"
+    "static/js/2.c858d048.chunk.js",
+    "static/css/main.266b6be8.chunk.css",
+    "static/js/main.cb22bb22.chunk.js"
   ]
 }
