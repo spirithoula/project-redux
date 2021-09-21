@@ -9,35 +9,21 @@ import {
 } from "react-router-dom";
 
 
-function App() {
-  const user = (event) => {
-    event.preventDefault();
-  };
-  const logInToggle = () => {
-    setLoggedIn(!loggedIn);
-  };
-  
- 
-
-  const [setPassword] = useState("");
-
-  const [setUsername] = useState("");
-
-  const [loggedIn, setLoggedIn] = useState(false);
-
-  const [gradeState] = useState(grades)
-
-
+export default function App() {
   return (
     <Router>
-      <Login Login={loggedIn} loginToggle={logInToggle} user={user} setPassword={setPassword} setUsername={setUsername}/>
       <Switch>
-        <Route exact path="/gradebook">
-          {loggedIn ? <Gradebook login={loggedIn} projects={gradeState}/> : <Redirect to="/" />}
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route exact path="/">
+          <Redirect exact from="/" to="gradebook" />
+        </Route>
+        <Route path="*">
+          <Redirect from="/" to="gradebook" />
         </Route>
       </Switch>
     </Router>
   );
 }
 
-export default App;
