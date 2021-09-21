@@ -1,6 +1,5 @@
 import './App.css';
-import Login from '../src/pages/login';
-import Gradebook from '../src/pages/gradebook';
+import Login from '../src/components/Login';
 import {
   BrowserRouter as Router,
   Switch,
